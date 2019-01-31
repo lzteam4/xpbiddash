@@ -33,15 +33,15 @@
                 <tbody>
                     <tr *ngFor='let product of filteredProducts'>
                         <td>
-                            <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.productName' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
+                            <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.name' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
                         </td>
                         <td>
                             <a [routerLink]="['/products', product.id]">
-                                {{ product.productName }}
+                                {{ product.name }}
                             </a>
                         </td>
-                        <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
-                        <td>{{ product.releaseDate }}</td>
+                        <td>{{ product.code | lowercase | convertToSpaces: '-' }}</td>
+                        <td>{{ product.releaseTimestamp }}</td>
                         <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
                         <td>
                             <pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'>

@@ -12,8 +12,8 @@ import { IProduct } from './product';
 @Injectable()
 export class ProductService {
     private _productUrl = './api/products/products.json';
-    private baseUrl = 'api/products'; // This is base URL for angular's InMemoryWebApi service
-
+    //private baseUrl = 'https://3mmhj3xmwc.execute-api.us-east-1.amazonaws.com/Prod/product'; // This is base URL for angular's InMemoryWebApi service
+    private baseUrl = './api/products'; 
     constructor(private _http: Http) { }
 
     getProducts(): Observable<IProduct[]> {

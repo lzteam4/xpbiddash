@@ -42,12 +42,12 @@ export class ProductEditComponent implements OnInit, OnDestroy {
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
         this.validationMessages = {
-            productName: {
+            name: {
                 required: 'Product name is required.',
                 minlength: 'Product name must be at least three characters.',
                 maxlength: 'Product name cannot exceed 50 characters.'
             },
-            productCode: {
+            code: {
                 required: 'Product code is required.'
             },
             starRating: {
@@ -63,10 +63,10 @@ export class ProductEditComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         // Define our Form Model using Form Builder
         this.productForm = this.fb.group({
-            productName: ['', [Validators.required,
+            name: ['', [Validators.required,
             Validators.minLength(3),
             Validators.maxLength(50)]],
-            productCode: ['', Validators.required],
+            code: ['', Validators.required],
             starRating: ['', [NumberValidators.range(1, 5)]],
             tags: this.fb.array([]),
             description: ''
@@ -124,15 +124,15 @@ export class ProductEditComponent implements OnInit, OnDestroy {
         if (!this.product || this.product.id === 0) {
             this.pageTitle = 'Add Product';
         } else {
-            this.pageTitle = `Edit Product: ${this.product ? this.product.productName : ''}`;
+            this.pageTitle = `Edit Product: ${this.product ? this.product.name : ''}`;
         }
 
         // Update the data on the form.
         // We cannot use setValue with FormArray. So we have used patchValue here
         if (this.product) {
             this.productForm.patchValue({
-                productName: this.product.productName,
-                productCode: this.product.productCode,
+                productName: this.product.name,
+                productCode: this.product.code,
                 starRating: this.product.starRating,
                 description: this.product.description
             });
@@ -145,7 +145,7 @@ export class ProductEditComponent implements OnInit, OnDestroy {
             // Don't delete, it was never saved.
             this.onSaveComplete();
         } else {
-            if (confirm(`Really delete the product: ${this.product.productName}?`)) {
+            if (confirm(`Really delete the product: ${this.product.name}?`)) {
                 this.productService.deleteProduct(this.product.id)
                     .subscribe(
                         () => this.onSaveComplete(),

@@ -1,52 +1,57 @@
-[
-    {
-        "productId": 1,
-        "productName": "Leaf Rake",
-        "productCode": "GDN-0011",
-        "releaseDate": "March 19, 2016",
-        "description": "Leaf rake with 48-inch wooden handle.",
-        "price": 19.95,
-        "starRating": 3.2,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-    },
-    {
-        "productId": 2,
-        "productName": "Garden Cart",
-        "productCode": "GDN-0023",
-        "releaseDate": "March 18, 2016",
-        "description": "15 gallon capacity rolling garden cart",
-        "price": 32.99,
-        "starRating": 4.2,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-    },
-    {
-        "productId": 5,
-        "productName": "Hammer",
-        "productCode": "TBX-0048",
-        "releaseDate": "May 21, 2016",
-        "description": "Curved claw steel hammer",
-        "price": 8.9,
-        "starRating": 4.8,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-    },
-    {
-        "productId": 8,
-        "productName": "Saw",
-        "productCode": "TBX-0022",
-        "releaseDate": "May 15, 2016",
-        "description": "15-inch steel blade hand saw",
-        "price": 11.55,
-        "starRating": 3.7,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
-    },
-    {
-        "productId": 10,
-        "productName": "Video Game Controller",
-        "productCode": "GMG-0042",
-        "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
-        "price": 35.95,
-        "starRating": 4.6,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
-    }
+[  
+   {  
+      "Id":"8a8bde52-4a2d-4e3d-98d2-d7de057d91d7",
+      "Name":"Nikhil",
+      "Code":null,
+      "Price":0.0,
+      "StarRating":0.0,
+      "Description":null,
+      "ImageUrl":null,
+      "ReleaseTimestamp":"0001-01-01T00:00:00",
+      "CreatedTimestamp":"2019-01-31T07:17:44.932+00:00"
+   },
+   {  
+      "Id":"2134c1aa-da36-4726-ad9d-57bc48992438",
+      "Name":"Bike",
+      "Code":"BK001",
+      "Price":23000.0,
+      "StarRating":4.5,
+      "Description":"Bike with good condition.",
+      "ImageUrl":"https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/12/17/Photos/Processed/Bike-k8ZE--621x414@LiveMint.jpg",
+      "ReleaseTimestamp":"2018-01-01T00:00:00+00:00",
+      "CreatedTimestamp":"2019-01-31T11:01:14.103+00:00"
+   },
+   {  
+      "Id":"501dbc97-5657-461d-9fb1-9b1c710b710b",
+      "Name":"Mobile",
+      "Code":null,
+      "Price":0.0,
+      "StarRating":0.0,
+      "Description":null,
+      "ImageUrl":null,
+      "ReleaseTimestamp":"0001-01-01T00:00:00",
+      "CreatedTimestamp":"2019-01-29T13:07:51.43+00:00"
+   },
+   {  
+      "Id":"48c01a52-0851-46b6-a84d-12476a771562",
+      "Name":"Super Fast Bike",
+      "Code":"BK004",
+      "Price":34000.0,
+      "StarRating":3.5,
+      "Description":"Bike with good condition.",
+      "ImageUrl":"https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/12/17/Photos/Processed/Bike-k8ZE--621x414@LiveMint.jpg",
+      "ReleaseTimestamp":"2016-01-01T00:00:00+00:00",
+      "CreatedTimestamp":"2019-01-31T12:51:50.925+00:00"
+   },
+   {  
+      "Id":"1770b120-4aba-4d33-b0dd-ff97cd054e03",
+      "Name":"Super Bike",
+      "Code":"BK002",
+      "Price":34000.0,
+      "StarRating":3.5,
+      "Description":"Bike with good condition.",
+      "ImageUrl":"https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/12/17/Photos/Processed/Bike-k8ZE--621x414@LiveMint.jpg",
+      "ReleaseTimestamp":"2016-01-01T00:00:00+00:00",
+      "CreatedTimestamp":"2019-01-31T11:17:21.367+00:00"
+   }
 ]
