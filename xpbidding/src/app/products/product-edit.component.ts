@@ -108,7 +108,7 @@ export class ProductEditComponent implements OnInit, OnDestroy {
 
     // Get Product by id
     getProduct(id: number): void {
-        this.productService.getProduct(id)
+        this.productService.get(id)
             .subscribe(
                 (product: IProduct) => this.onProductRetrieved(product),
                 (error: any) => this.errorMessage = <any>error
@@ -146,7 +146,7 @@ export class ProductEditComponent implements OnInit, OnDestroy {
             this.onSaveComplete();
         } else {
             if (confirm(`Really delete the product: ${this.product.name}?`)) {
-                this.productService.deleteProduct(this.product.id)
+                this.productService.delete(this.product.id)
                     .subscribe(
                         () => this.onSaveComplete(),
                         (error: any) => this.errorMessage = <any>error
@@ -165,7 +165,7 @@ export class ProductEditComponent implements OnInit, OnDestroy {
             let p = Object.assign({}, this.product, this.productForm.value);
 
 
-            this.productService.saveProduct(p)
+            this.productService.save(p)
                 .subscribe(
                     () => this.onSaveComplete(),
                     (error: any) => this.errorMessage = <any>error

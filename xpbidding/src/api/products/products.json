@@ -11,6 +11,17 @@
       "CreatedTimestamp":"2019-01-31T07:17:44.932+00:00"
    },
    {  
+      "Id":"33c36fe6-39f7-4e1f-aa40-ac50658ec6f4",
+      "Name":"Bike super fast",
+      "Code":"BK001FS",
+      "Price":73000.0,
+      "StarRating":3.5,
+      "Description":"Bike with good condition.",
+      "ImageUrl":"https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/12/17/Photos/Processed/Bike-k8ZE--621x414@LiveMint.jpg",
+      "ReleaseTimestamp":"2013-01-01T00:00:00+00:00",
+      "CreatedTimestamp":"2019-02-01T07:54:11.957+00:00"
+   },
+   {  
       "Id":"2134c1aa-da36-4726-ad9d-57bc48992438",
       "Name":"Bike",
       "Code":"BK001",
@@ -31,6 +42,17 @@
       "ImageUrl":null,
       "ReleaseTimestamp":"0001-01-01T00:00:00",
       "CreatedTimestamp":"2019-01-29T13:07:51.43+00:00"
+   },
+   {  
+      "Id":"e51bdf00-0d2c-4bff-bc1f-7485fdd497e9",
+      "Name":"Bike super fast",
+      "Code":"BK001FS",
+      "Price":73000.0,
+      "StarRating":3.5,
+      "Description":"Bike with good condition.",
+      "ImageUrl":"https://images.livemint.com/rf/Image-621x414/LiveMint/Period2/2016/12/17/Photos/Processed/Bike-k8ZE--621x414@LiveMint.jpg",
+      "ReleaseTimestamp":"2013-01-01T00:00:00+00:00",
+      "CreatedTimestamp":"2019-02-01T11:55:11.404+00:00"
    },
    {  
       "Id":"48c01a52-0851-46b6-a84d-12476a771562",
