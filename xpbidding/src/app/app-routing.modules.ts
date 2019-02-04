@@ -9,7 +9,7 @@ import { WelcomeComponent } from "./home/welcome.component";
 const routes: Routes = [
     { path: 'welcome', component: WelcomeComponent },
     { path: 'products', loadChildren: "../app/products/product.module#ProductModule" },
-    { path: 'mix', loadChildren: "../app/mix/mix.module#MixModule" },
+    // { path: 'mix', loadChildren: "../app/mix/mix.module#MixModule" },
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
