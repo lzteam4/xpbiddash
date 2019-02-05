@@ -6,47 +6,47 @@
     <div class="panel-body">
         <form class="form-horizontal" novalidate (ngSubmit)="saveProduct()" [formGroup]="productForm">
             <fieldset>
-                <div class="form-group" [ngClass]="{'has-error': displayMessage?.productName }">
-                    <label class="col-md-2 control-label" for="productNameId">Product Name</label>
+                <div class="form-group" [ngClass]="{'has-error': displayMessage?.Name }">
+                    <label class="col-md-2 control-label" for="NameId">Product Name</label>
 
                     <div class="col-md-8">
-                        <input class="form-control" id="productNameId" type="text" placeholder="Name (required)" formControlName="productName" />
-                        <span class="help-block" *ngIf="displayMessage?.productName">
-                            {{displayMessage?.productName}}
+                        <input class="form-control" id="NameId" type="text" placeholder="Name (required)" formControlName="Name" />
+                        <span class="help-block" *ngIf="displayMessage?.Name">
+                            {{displayMessage?.Name}}
                         </span>
                     </div>
                 </div>
 
-                <div class="form-group" [ngClass]="{'has-error': displayMessage?.productCode}">
-                    <label class="col-md-2 control-label" for="productCodeId">Product Code</label>
+                <div class="form-group" [ngClass]="{'has-error': displayMessage?.Code}">
+                    <label class="col-md-2 control-label" for="CodeId">Product Code</label>
 
                     <div class="col-md-8">
-                        <input class="form-control" id="productCodeId" type="text" placeholder="Code (required)" formControlName="productCode" />
-                        <span class="help-block" *ngIf="displayMessage?.productCode">
-                            {{displayMessage?.productCode}}
+                        <input class="form-control" id="CodeId" type="text" placeholder="Code (required)" formControlName="Code" />
+                        <span class="help-block" *ngIf="displayMessage?.Code">
+                            {{displayMessage?.Code}}
                         </span>
                     </div>
                 </div>
 
                 <!-- Star Rating -->
-                <div class="form-group" [ngClass]="{'has-error': displayMessage?.starRating}">
-                    <label class="col-md-2 control-label" for="starRatingId">Star Rating (1-5)</label>
+                <div class="form-group" [ngClass]="{'has-error': displayMessage?.StarRating}">
+                    <label class="col-md-2 control-label" for="StarRatingId">Star Rating (1-5)</label>
 
                     <div class="col-md-8">
-                        <input class="form-control" id="starRatingId" type="number" placeholder="Rating" formControlName="starRating" />
-                        <span class="help-block" *ngIf="displayMessage?.starRating">
-                            {{displayMessage?.starRating}}
+                        <input class="form-control" id="StarRatingId" type="number" placeholder="Rating" formControlName="StarRating" />
+                        <span class="help-block" *ngIf="displayMessage?.StarRating">
+                            {{displayMessage?.StarRating}}
                         </span>
                     </div>
                 </div>
 
                 <!--Tags-->
-                <div formArrayName="tags">
+                <div formArrayName="Tags">
                     <div class="row">
                         <button class="col-md-offset-1 col-md-1 btn btn-default" type="button" (click)="addTag()">Add Tag
                         </button>
                     </div>
-                    <div class="form-group" *ngFor="let tag of tags.controls; let i=index">
+                    <div class="form-group" *ngFor="let tag of Tags.controls; let i=index">
                         <label class="col-md-2 control-label" [attr.for]="i">Tag</label>
 
                         <div class="col-md-8">
@@ -58,13 +58,13 @@
                 </div>
 
                 <!-- Description -->
-                <div class="form-group" [ngClass]="{'has-error': displayMessage.description}">
+                <div class="form-group" [ngClass]="{'has-error': displayMessage.Description}">
                     <label class="col-md-2 control-label" for="descriptionId">Description</label>
 
                     <div class="col-md-8">
-                        <textarea class="form-control" id="descriptionId" placeholder="Description" rows=3 formControlName="description"></textarea>
-                        <span class="help-block" *ngIf="displayMessage.description">
-                            {{ displayMessage.description}}
+                        <textarea class="form-control" id="descriptionId" placeholder="Description" rows=3 formControlName="Description"></textarea>
+                        <span class="help-block" *ngIf="displayMessage.Description">
+                            {{ displayMessage.Description}}
                         </span>
                     </div>
                 </div>

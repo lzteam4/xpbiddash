@@ -1,12 +1,13 @@
 export interface IProduct {
-    id: number;
-    name: string;
-    code: string;
-    releaseTimestamp: string;
-    price: number;
-    description: string;
-    starRating: number;
-    imageUrl: string;
-    tags:string[];
+    Id: number;
+    Name: string;
+    Code: string;
+    ReleaseTimestamp: string;
+    Price: number;
+    Description: string;
+    StarRating: number;
+    ImageUrl: string;
+    Tags:string[];
+    CreatedTimestamp: string;
 }
 

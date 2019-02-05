@@ -33,22 +33,22 @@
                 <tbody>
                     <tr *ngFor='let product of filteredProducts'>
                         <td>
-                            <img *ngIf='showImage' [src]='product.imageUrl' [title]='product.name' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
+                            <img *ngIf='showImage' [src]='product.ImageUrl' [title]='product.Name' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
                         </td>
                         <td>
-                            <a [routerLink]="['/products', product.id]">
-                                {{ product.name }}
+                            <a [routerLink]="['/products', product.Id]">
+                                {{ product.Name }}
                             </a>
                         </td>
-                        <td>{{ product.code | lowercase | convertToSpaces: '-' }}</td>
-                        <td>{{ product.releaseTimestamp }}</td>
-                        <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
+                        <td>{{ product.Code | lowercase | convertToSpaces: '-' }}</td>
+                        <td>{{ product.ReleaseTimestamp }}</td>
+                        <td>{{ product.Price | currency:'USD':true:'1.2-2'}}</td>
                         <td>
-                            <pm-star [rating]='product.starRating' (ratingClicked)='onRatingClicked($event)'>
+                            <pm-star [rating]='product.StarRating' (ratingClicked)='onRatingClicked($event)'>
                             </pm-star>
                         </td>
                         <td>
-                            <a class="btn btn-primary" [routerLink]="['/productEdit', product.id]">Edit</a>
+                            <a class="btn btn-primary" [routerLink]="['/productEdit', product.Id]">Edit</a>
                         </td>
                     </tr>
                 </tbody>

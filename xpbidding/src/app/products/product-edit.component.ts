@@ -30,8 +30,8 @@ export class ProductEditComponent implements OnInit, OnDestroy {
     private validationMessages: { [key: string]: { [key: string]: string } };
     private genericValidator: GenericValidator;
 
-    get tags(): FormArray {
-        return <FormArray>this.productForm.get('tags');
+    get Tags(): FormArray {
+        return <FormArray>this.productForm.get('Tags');
     }
 
     constructor(private fb: FormBuilder,
@@ -42,15 +42,15 @@ export class ProductEditComponent implements OnInit, OnDestroy {
         // Defines all of the validation messages for the form.
         // These could instead be retrieved from a file or database.
         this.validationMessages = {
-            name: {
+            Name: {
                 required: 'Product name is required.',
                 minlength: 'Product name must be at least three characters.',
                 maxlength: 'Product name cannot exceed 50 characters.'
             },
-            code: {
+            Code: {
                 required: 'Product code is required.'
             },
-            starRating: {
+            StarRating: {
                 range: 'Rate the product between 1 (lowest) and 5 (highest).'
             }
         };
@@ -63,13 +63,13 @@ export class ProductEditComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         // Define our Form Model using Form Builder
         this.productForm = this.fb.group({
-            name: ['', [Validators.required,
+            Name: ['', [Validators.required,
             Validators.minLength(3),
             Validators.maxLength(50)]],
-            code: ['', Validators.required],
-            starRating: ['', [NumberValidators.range(1, 5)]],
-            tags: this.fb.array([]),
-            description: ''
+            Code: ['', Validators.required],
+            StarRating: ['', [NumberValidators.range(1, 5)]],
+            Tags: this.fb.array([]),
+            Description: ''
         });
 
         // Read the product Id from the route parameter
@@ -97,13 +97,13 @@ export class ProductEditComponent implements OnInit, OnDestroy {
     }
 
     addTag(): void {
-        this.tags.push(new FormControl());
+        this.Tags.push(new FormControl());
     }
 
     deleteTag(index: number): void {
-        this.tags.removeAt(index);
+        this.Tags.removeAt(index);
         // The line below is required in Angular 4 to fix a bug with `removeAt` that was fixed in Angular 5.
-        this.productForm.setControl('tags', this.fb.array(this.tags.value || []));
+        this.productForm.setControl('Tags', this.fb.array(this.Tags.value || []));
     }
 
     // Get Product by id
@@ -121,32 +121,32 @@ export class ProductEditComponent implements OnInit, OnDestroy {
         }
         this.product = product;
 
-        if (!this.product || this.product.id === 0) {
+        if (!this.product || this.product.Id === 0) {
             this.pageTitle = 'Add Product';
         } else {
-            this.pageTitle = `Edit Product: ${this.product ? this.product.name : ''}`;
+            this.pageTitle = `Edit Product: ${this.product ? this.product.Name : ''}`;
         }
 
         // Update the data on the form.
         // We cannot use setValue with FormArray. So we have used patchValue here
         if (this.product) {
             this.productForm.patchValue({
-                productName: this.product.name,
-                productCode: this.product.code,
-                starRating: this.product.starRating,
-                description: this.product.description
+                Name: this.product.Name,
+                Code: this.product.Code,
+                StarRating: this.product.StarRating,
+                Description: this.product.Description
             });
         }
-        this.productForm.setControl('tags', this.fb.array(this.product.tags || []));
+        this.productForm.setControl('Tags', this.fb.array(this.product.Tags || []));
     }
 
     deleteProduct(): void {
-        if (this.product.id === 0) {
+        if (this.product.Id === 0) {
             // Don't delete, it was never saved.
             this.onSaveComplete();
         } else {
-            if (confirm(`Really delete the product: ${this.product.name}?`)) {
-                this.productService.delete(this.product.id)
+            if (confirm(`Really delete the product: ${this.product.Name}?`)) {
+                this.productService.delete(this.product.Id)
                     .subscribe(
                         () => this.onSaveComplete(),
                         (error: any) => this.errorMessage = <any>error
