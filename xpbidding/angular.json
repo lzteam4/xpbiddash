@@ -3,31 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "xpbiddash": {
+    "my-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true
+          "styleext": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/xpbiddash",
+            "outputPath": "dist/my-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/firebase-messaging-sw.js",
+              "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -54,25 +59,26 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "xpbiddash:build"
+            "browserTarget": "my-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "xpbiddash:build:production"
+              "browserTarget": "my-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "xpbiddash:build"
+            "browserTarget": "my-app:build"
           }
         },
         "test": {
@@ -83,12 +89,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ]
           }
         },
@@ -106,7 +113,7 @@
         }
       }
     },
-    "xpbiddash-e2e": {
+    "my-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +122,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "xpbiddash:serve"
+            "devServerTarget": "my-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "xpbiddash:serve:production"
+              "devServerTarget": "my-app:serve:production"
             }
           }
         },
@@ -135,5 +142,5 @@
       }
     }
   },
-  "defaultProject": "xpbiddash"
+  "defaultProject": "my-app"
 }

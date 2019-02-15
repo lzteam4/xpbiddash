@@ -1,0 +1,27 @@
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    Product Categories
+  </div>
+  <div class='panel-body'>
+
+    <div class='table-responsive'>
+      <table class='table' *ngIf='productCategories && productCategories.length'>
+        <thead>
+        </thead>
+        <tbody>
+          <tr *ngFor='let productCategory of productCategories'>
+            <td>
+              <label>
+                <input type="checkbox" [checked]="productCategory.isSubscribed" (change)="checkboxChanged($event, productCategory.productCatName)">
+                {{productCategory.productCatName}}
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage' class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>

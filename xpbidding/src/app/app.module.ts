@@ -1,21 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http";
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './home/welcome.component';
-import { ProductModule } from './products/product.module';
-import { AppRoutingModule } from './app-routing.modules';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { AngularFireModule } from '@angular/fire';
+
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    WelcomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
     HttpClientModule,
-    ProductModule,
-    AppRoutingModule
+    AngularFireMessagingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ToastModule
   ],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<p-dataView [value]="products" [sortField]="sortField" [sortOrder]="sortOrder">
+    <p-header>
+        <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By"
+            (onChange)="onSortChange($event)" [autoWidth]="false" [style]="{'min-width':'15em'}"></p-dropdown>
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </p-header>
+    <ng-template let-product pTemplate="listItem">
+        <div>
+            {{product.Id}}
+        </div>
+    </ng-template>
+    <ng-template let-product pTemplate="gridItem">
+        <div class="ui-g-12 ui-md-3">
+            {{product.Name}}
+        </div>
+    </ng-template>
+</p-dataView>
